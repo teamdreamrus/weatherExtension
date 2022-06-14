@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Погода",
 	"description": "погода вашего местоположения",
-	"version": "1.0.3",
+	"version": "1.0.14",
 	"icons": {
         "128": "images/weather.png"
     },
@@ -16,6 +16,6 @@
 	"web_accessible_resources": [
 		 "popup/popup.js", "images/weather.png","jquery/jquery.min.js"
 	],
-	"permissions": ["activeTab", "tabs", "storage"],
+	"permissions": ["tabs"],
 	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
