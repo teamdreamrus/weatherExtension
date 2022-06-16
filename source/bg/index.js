@@ -1,5 +1,6 @@
 import * as merchantsFunctions from '~/bg/entities/merchants'
 import * as weather from '~/bg/entities/weather'
+import { isUrl } from '~/utils/tools'
 import { getMessagesHandlers } from './messageHandlers/index'
 
 const fetchBgData = async () => {
@@ -63,5 +64,25 @@ chrome.runtime.onInstalled.addListener((details) => {
     chrome.tabs.create({
       url: 'https://forms.gle/a6seE27pRQu2DP1J7'
     })
+  }
+})
+chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
+  if (changeInfo.status === 'loading') {
+    const url = tab.url
+    if (isUrl(url)) {
+      const merchant = await merchantsFunctions.getByUrl(url)
+      if (!merchant) {
+        return
+      }
+      const { activated = {} } = await chrome.storage.session.get('activated')
+      if (activated?.[merchant.url]) {
+        return
+      }
+      chrome.tabs.update(tab.id, {
+        url: merchant.deeplink
+      })
+      activated[merchant.url] = true
+      await chrome.storage.session.set({ activated })
+    }
   }
 })
