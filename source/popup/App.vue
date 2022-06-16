@@ -32,7 +32,7 @@ export default {
 
 .popup {
   width: 330px;
-  height: 450px;
+  height: 466px;
   background: linear-gradient(180deg, #62b8f6 0%, #2c79c1 77.96%);
   overflow: hidden;
   padding: 16px;

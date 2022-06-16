@@ -25,7 +25,6 @@ export default createStore({
       const { data } = await sendContentMessage({
         action: 'initPopup'
       })
-      console.log(data)
       return commit('set', { ...data, isLoading: false })
     }
   }
