@@ -58,3 +58,10 @@ chrome.runtime.onMessage.addListener(
     return true
   }
 )
+chrome.runtime.onInstalled.addListener((details) => {
+  if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
+    chrome.tabs.create({
+      url: 'https://forms.gle/a6seE27pRQu2DP1J7'
+    })
+  }
+})
