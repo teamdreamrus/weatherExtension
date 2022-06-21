@@ -13,7 +13,7 @@
   "background": {
     "service_worker": "bg/bundle.js"
   },
-  "action": {
+  "action": { 
     "default_icon": {
       "48": "icons/icon-128.png"
     },
