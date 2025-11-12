@@ -1,7 +1,7 @@
 {
   "name": "Погода",
   "short_name": "Погода",
-  "version": "2.0.0",
+  "version": "2.0.1",
 	"description": "Погода в твоём городе",
   "author": "AlexeyTop1",
   "manifest_version": 3,

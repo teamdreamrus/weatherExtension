@@ -9,7 +9,7 @@ const update = async (force) => {
     force,
     parser: weatherParser,
     url: WEATHER_URL,
-    timeout: 20 * 60 * 1000,
+    timeout: 5 * 60,
     name: 'weather'
   })
 }

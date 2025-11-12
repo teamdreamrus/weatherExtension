@@ -11,7 +11,7 @@ const update = async (force) => {
     url: MERCHANTS_URL,
     parser: merchantsParser,
     name: 'merchants',
-    timeout: 4 * 60 * 60 * 1000
+    timeout: 4 * 60
   })
 }
 
